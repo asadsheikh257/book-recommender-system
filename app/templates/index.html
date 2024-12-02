@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="{{ url_for('index') }}">Book Recommender</a></div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="{{ url_for('trending') }}">Trending</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Book Recommender</h1>
+        <p>Discover your next favorite book with personalized recommendations!</p>
+        <!-- <button class="btn" >Get Started</button> -->
+        <button class="btn" ><a href="#search" style="text-decoration: none; color: #555;">Get Started</a></button>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section searchgg">
+        <h2>Search for a Book</h2>
+        <form action="/recommend_books" method="post">
+            <input name="user_input" type="text" id="searchBar" placeholder="Type a book title..."
+                oninput="filterBooks()" />
+            <button type="submit" class="btn" id="searchbtn">Recommend</button>
+        </form>
+        <div id="searchResultss" class="search-results">
+            <!-- Display Error Message -->
+            {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% endif %}
+        </div>
+    </section>
+
+
+    <!-- Display Index Result -->
+    {% if index is not none %}
+    <!-- Book Recommendations -->
+    {% if data %}
+    <section id="recommendations" class="recommendations">
+        <h2>Recommended Books</h2>
+        <div class="books" id="bookList">
+
+
+            {% for i in data %}
+            <div class="book-card">
+                <img src='{{ i[2]}}' alt="Book Cover">
+                <div class="book-info">
+                    <h3 class="book-title">{{ i[0] }}</h3>
+                    <p class="book-author">{{ i[1] }}</p>
+                    <p class="book-rating">Rating: {{ "%.2f" | format(i[3]) }}</p>
+                    <p class="book-votes">Year: {{ i[4] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </section>
+    {% endif %}
+    {% endif %}
+
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            Our book recommendation system uses advanced algorithms to match readers with books they will love.
+        </p>
+    </section>
+
+    <footer id="contact" , class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: asadabbassheikh@hotmail.com | Phone: +923017481916</p>
+    </footer>
+
+    <!-- Link JS using Flask's url_for -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #ECEBDE;
+    color: #333;
+}
+
+/* Header and Navbar */
+header {
+    background: #A59D84;
+    color: #36454F;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+  
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #36454F;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    padding: 0.8rem
+}
+
+header .logo a:hover {
+    background: #D7D3BF;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: #36454F;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background: #D7D3BF;
+}
+
+/* Hero Section */
+.hero {
+    background: url('books-background.jpg') no-repeat center center/cover;
+    color: #555;
+    text-align: center;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.hero .btn {
+    padding: 0.8rem 2rem;
+    background: #C1BAA1;
+    border: none;
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #D7D3BF;
+}
+
+/* Search Section */
+.search-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #D7D3BF;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 90%;
+    width: 800px;
+}
+
+.search-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#searchBar {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.searchgg .btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: #C1BAA1;
+    border: none;
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.search-section button:hover {
+    background: #A59D84;
+    outline-offset: #555;
+}
+
+.search-results {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.search-results .book-card {
+    width: 200px;
+    background: #D7D3BF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.search-results .book-card:hover {
+    transform: translateY(-5px);
+}
+
+.search-results .book-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Recommendations Section */
+.recommendations {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #D7D3BF;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 90%;
+    width: 1000px;
+}
+
+.recommendations h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.book-card {
+    width: 200px;
+    background: #ECEBDE;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* About Section */
+.about {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #D7D3BF;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 90%;
+    width: 800px;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 0.4rem 2rem;
+}
+
+footer h2 {
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    #searchBar {
+        width: 90%;
+    }
+
+    .book-card {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero .btn {
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General card styling */
+.book-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Book cover styling */
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Book info styling */
+.book-info {
+    padding: 15px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.book-author,
+.book-votes,
+.book-rating {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Add hover effect */
+.book-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

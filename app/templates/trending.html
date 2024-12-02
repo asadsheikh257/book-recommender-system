@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="{{ url_for('index') }}">Book Recommender</a></div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="{{ url_for('trending') }}">Trending</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- Book Recommendations -->
+    <section id="recommendations" class="recommendations">
+        <h2>Top 50 Books</h2>
+        <div class="books" id="bookList">
+            {% for i in range(name|length) %}
+            <!-- <div class="book-card">
+                    <img src="{{ image[i] }}" alt="Book Cover">
+                    <h3>{{ name[i] }}</h3>
+                    <h4>Author: {{ author[i] }}</h4>
+                    <h5>Votes: {{ votes[i] }}</h5>
+                    <h5>Rating: {{ "%.2f" | format(rating[i]) }}</h5>
+                </div> -->
+            <div class="book-card">
+                <img src="{{ image[i]}}" alt="Book Cover">
+                <div class="book-info">
+                    <h3 class="book-title">{{ name[i] }}</h3>
+                    <p class="book-author">{{ author[i] }} </p>
+                    <p class="book-votes">Number of Votes: {{ votes[i] }} </p>
+                    <p class="book-rating">Rating: {{ "%.2f" | format(rating[i]) }}</p>
+                    <p class="book-rating">Year: {{year[i]}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+    <footer id="contact" , class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: asadabbassheikh@hotmail.com | Phone: +923017481916</p>
+    </footer>
+
+    <!-- Link JS using Flask's url_for -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
