@@ -68,8 +68,4 @@ def trending():
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
->>>>>>> f1913cfcea165caa3c8bd40da017ee521d04d299
